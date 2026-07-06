@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Toutes les applications - SpinApp</title>
+  <meta name="description" content="Catalogue des applications Spirale Agence disponibles en téléchargement APK direct.">
+  <meta name="theme-color" content="#0A1628">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="style/main.css">
+</head>
+<body data-page="catalog">
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<header class="topbar" data-navbar>
+  <div class="container nav-row">
+    <a class="brand" href="index.html"><img class="brand-logo" src="assets/logo.png" alt="Logo Spirale Agence"><span class="brand-copy"><span class="brand-name">Spirale Agence</span><span class="brand-sub">SpinApp Distribution</span></span></a>
+    <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" data-nav-toggle><span></span></button>
+    <nav class="nav-links" aria-label="Navigation principale"><a class="nav-link" href="index.html" data-nav="home">Accueil</a><a class="nav-link" href="all-apps.html" data-nav="catalog">Applications</a><a class="nav-link" href="index.html#contact">Contact</a><a class="btn btn-ghost btn-small" href="admin.html">Portail administrateur</a></nav>
+  </div>
+</header>
+<main id="contenu">
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Catalogue SpinApp</p>
+      <h1 class="page-title">Toutes les applications Spirale, au même endroit.</h1>
+      <p class="lead">Recherchez une solution, filtrez par catégorie et accédez à une fiche claire avant de télécharger l’APK.</p>
+    </div>
+  </section>
+  <section class="section-tight">
+    <div class="container">
+      <div class="catalog-toolbar" role="search">
+        <label class="search-field"><span class="search-icon" aria-hidden="true">⌕</span><span class="sr-only">Rechercher</span><input type="search" placeholder="Rechercher une application, une fonctionnalité…" data-app-search></label>
+        <label><span class="sr-only">Catégorie</span><select data-app-category></select></label>
+      </div>
+      <div class="filter-pills" data-category-pills aria-label="Filtres de catégories"></div>
+      <p class="catalog-count" data-catalog-count>Chargement du catalogue…</p>
+      <div class="app-grid" data-apps-catalog><div class="loading-skeleton"></div></div>
+      <div class="pagination" data-pagination></div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><img src="assets/logo.png" alt="Logo Spirale Agence"><div><strong>SpinApp par Spirale Agence</strong><span>Catalogue autonome des applications de l’agence.</span></div></div><div class="footer-links"><a href="index.html">Accueil</a><a href="admin.html">Accès administrateur</a><a href="mailto:info.elysafly@gmail.com">Email</a></div></div><div class="footer-bottom"><span>© <span data-year>2026</span> Spirale Agence - Tous droits réservés.</span><span>APK directs, expérience mobile, présence crédible.</span></div></div></footer>
+<script src="scripts/apps.js" defer></script>
+<script src="scripts/main.js" defer></script>
+</body>
+</html>

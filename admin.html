@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portail administrateur - SpinApp</title>
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#0A1628">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="style/main.css">
+  <link rel="stylesheet" href="style/admin.css">
+</head>
+<body data-page="admin">
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<header class="topbar" data-navbar>
+  <div class="container nav-row">
+    <a class="brand" href="index.html"><img class="brand-logo" src="assets/logo.png" alt="Logo Spirale Agence"><span class="brand-copy"><span class="brand-name">Spirale Agence</span><span class="brand-sub">Portail SpinApp</span></span></a>
+    <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" data-nav-toggle><span></span></button>
+    <nav class="nav-links" aria-label="Navigation principale"><a class="nav-link" href="index.html" data-nav="home">Accueil</a><a class="nav-link" href="all-apps.html" data-nav="catalog">Applications</a><button class="btn btn-ghost btn-small" id="logoutBtn" type="button">Déconnexion</button></nav>
+  </div>
+</header>
+<main id="contenu">
+  <section class="admin-hero">
+    <div class="container"><p class="eyebrow">Espace sécurisé</p><h1>Portail administrateur SpinApp.</h1><p class="lead">Ajoutez, modifiez et exportez le catalogue des applications Spirale Agence avec une interface propre et mobile-friendly.</p></div>
+  </section>
+
+  <section class="login-shell" id="loginPanel">
+    <form class="login-card" id="loginForm">
+      <div class="login-lock" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M7 10V8a5 5 0 0 1 10 0v2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><rect x="5" y="10" width="14" height="11" rx="2" stroke="currentColor" stroke-width="2"/></svg></div>
+      <h2>Authentification requise</h2>
+      <p>Entrez le mot de passe administrateur pour accéder à la gestion du catalogue. Si vous ne l’avez pas, contactez l’administrateur.</p>
+      <div class="field"><label for="adminPassword">Mot de passe</label><input id="adminPassword" type="password" autocomplete="current-password" placeholder="••••••••••••" required></div>
+      <div class="form-actions"><button class="btn btn-primary btn-block" type="submit">Se connecter</button></div>
+      <p class="security-note">Note : cette protection admin est côté navigateur. La publication automatique passe par Cloudflare Worker afin de garder le token GitHub hors du code public.</p>
+    </form>
+  </section>
+
+  <section class="admin-dashboard hidden" id="adminDashboard">
+    <div class="container">
+      <div class="admin-actions">
+        <button class="btn btn-primary" id="newAppBtn" type="button">Ajouter une application</button>
+        <button class="btn btn-secondary" id="exportBtn" type="button">Exporter apps.json</button>
+        <label class="btn btn-ghost import-label">Importer JSON<input id="importFile" type="file" accept="application/json,.json"></label>
+        <button class="btn btn-ghost" id="resetLocalBtn" type="button">Réinitialiser local</button>
+      </div>
+      <div class="admin-stats" id="adminStats"></div>
+
+      <section class="admin-panel publish-panel">
+        <div class="admin-panel-head">
+          <h2>Publication automatique GitHub</h2>
+          <span class="status-badge">Cloudflare Worker</span>
+        </div>
+        <div class="admin-panel-body">
+          <p class="security-note">Le bouton ci-dessous publie automatiquement le catalogue dans <strong id="publishTarget">keppler999/SpinApp-1 → data/apps.json (main)</strong>. Le token GitHub reste protégé dans les secrets Cloudflare.</p>
+          <p class="security-note">Worker configuré : <strong id="workerUrl">https://spinapp.erikaekepler.workers.dev</strong></p>
+          <form id="publishForm" class="password-grid">
+            <div class="field">
+              <label for="publishSecret">Secret de publication</label>
+              <input id="publishSecret" type="password" autocomplete="off" placeholder="Secret configuré dans Cloudflare" required>
+              <small>Ce secret n’est pas stocké dans le site. Il sert uniquement à autoriser l’envoi vers le Worker.</small>
+            </div>
+            <div class="field">
+              <label for="commitMessage">Message du commit</label>
+              <input id="commitMessage" placeholder="chore(spinapp): publish apps catalog">
+              <small>Optionnel. GitHub affichera ce message dans l’historique du dépôt.</small>
+            </div>
+            <div class="form-actions" style="grid-column:1/-1">
+              <button class="btn btn-primary" id="publishBtn" type="submit">Publier sur GitHub</button>
+              <button class="btn btn-secondary" id="workerHealthBtn" type="button">Tester le Worker</button>
+            </div>
+          </form>
+          <p class="security-note publish-status" id="publishStatus">Prêt à publier. Vérifiez d’abord que les variables et secrets Cloudflare sont configurés.</p>
+        </div>
+      </section>
+
+      <div class="admin-grid">
+        <section class="admin-panel">
+          <div class="admin-panel-head"><h2>Gestion des applications</h2><span class="status-badge">Catalogue local</span></div>
+          <div class="admin-panel-body" id="appsList"></div>
+        </section>
+        <section class="admin-panel">
+          <div class="admin-panel-head"><h2 id="formTitle">Ajouter une application</h2><span class="status-badge">Formulaire complet</span></div>
+          <div class="admin-panel-body">
+            <form id="appForm">
+              <input type="hidden" id="appId">
+              <div class="form-grid">
+                <div class="field"><label for="name">Nom</label><input id="name" required placeholder="Nom de l’application"></div>
+                <div class="field"><label for="version">Version</label><input id="version" placeholder="1.0.0"></div>
+                <div class="field"><label for="category">Catégorie</label><select id="category"><option>Gestion</option><option>Paiement</option><option>Commerce</option><option>Éducation</option><option>Productivité</option><option>Général</option></select></div>
+                <div class="field"><label for="sizeMb">Taille (MB)</label><input id="sizeMb" inputmode="decimal" placeholder="25"></div>
+                <div class="field full"><label for="shortDescription">Description courte</label><input id="shortDescription" maxlength="180" placeholder="Phrase accrocheuse affichée sur les cartes"></div>
+                <div class="field full"><label for="description">Description complète</label><textarea id="description" placeholder="Présentez la valeur, le public cible et les bénéfices concrets."></textarea></div>
+                <div class="field full"><label for="apkUrl">URL APK</label><input id="apkUrl" type="url" placeholder="https://github.com/.../releases/download/.../app.apk"></div>
+                <div class="field full"><label for="logoUrl">Logo de l’application (URL image)</label><input id="logoUrl" placeholder="https://.../logo.png"><small>Si vide, SpinApp génère automatiquement une icône premium avec les initiales.</small></div>
+                <div class="field full"><label for="screenshots">Captures d’écran (une URL par ligne)</label><textarea id="screenshots" placeholder="https://.../capture-1.png&#10;https://.../capture-2.png"></textarea></div>
+                <div class="field"><label for="monthlyPrice">Prix mensuel ($)</label><input id="monthlyPrice" inputmode="decimal" placeholder="5"></div>
+                <div class="field"><label for="annualPrice">Prix annuel ($)</label><input id="annualPrice" inputmode="decimal" placeholder="50"></div>
+                <div class="field"><label for="trialDays">Durée essai (jours)</label><input id="trialDays" inputmode="numeric" placeholder="7"></div>
+                <div class="field"><label for="android">Compatibilité</label><input id="android" placeholder="Android 8.0+"></div>
+                <div class="field"><label for="updatedAt">Dernière mise à jour</label><input id="updatedAt" type="date"></div>
+                <div class="field"><label for="downloads">Téléchargements</label><input id="downloads" inputmode="numeric" placeholder="0"></div>
+                <div class="field"><label for="rating">Note moyenne</label><input id="rating" inputmode="decimal" placeholder="0" min="0" max="5" step="0.1" type="number"></div>
+                <label class="checkbox-field"><input id="featured" type="checkbox"> Mettre en avant sur l’accueil</label>
+                <div class="field full"><label for="features">Fonctionnalités (une par ligne)</label><textarea id="features" placeholder="Gestion simple des clients&#10;Paiement Mobile Money&#10;Rapports rapides"></textarea></div>
+              </div>
+              <div class="form-actions"><button class="btn btn-success" type="submit">Enregistrer</button><button class="btn btn-secondary" id="cancelEditBtn" type="button">Annuler</button></div>
+            </form>
+          </div>
+        </section>
+      </div>
+      <div class="admin-grid" style="margin-top:1rem">
+        <section class="admin-panel"><div class="admin-panel-head"><h2>Aperçu JSON</h2><span class="status-badge">Exportable</span></div><div class="admin-panel-body"><pre class="json-preview" id="jsonPreview">{}</pre></div></section>
+        <section class="admin-panel"><div class="admin-panel-head"><h2>Mot de passe</h2><span class="status-badge">Session 12h</span></div><div class="admin-panel-body"><p class="security-note">Mot de passe initial : Spirale@2026. Changez-le avant publication si nécessaire.</p><form id="passwordForm" class="password-grid"><div class="field"><label for="oldPassword">Ancien mot de passe</label><input id="oldPassword" type="password" autocomplete="current-password"></div><div class="field"><label for="newPassword">Nouveau mot de passe</label><input id="newPassword" type="password" autocomplete="new-password" minlength="8"></div><div class="form-actions" style="grid-column:1/-1"><button class="btn btn-secondary" type="submit">Changer le mot de passe</button></div></form></div></section>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer"><div class="container"><div class="footer-bottom"><span>© <span data-year>2026</span> Spirale Agence - Tous droits réservés.</span><span>Portail administrateur SpinApp.</span></div></div></footer>
+<script src="scripts/apps.js" defer></script>
+<script src="scripts/auth.js" defer></script>
+<script src="scripts/main.js" defer></script>
+<script src="scripts/admin.js" defer></script>
+<script src="scripts/publisher.js" defer></script>
+</body>
+</html>

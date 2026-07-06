@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SpinApp - Plateforme de Distribution Spirale Agence</title>
+  <meta name="description" content="SpinApp centralise les applications développées par Spirale Agence avec téléchargement APK direct, expérience mobile et portail administrateur.">
+  <meta name="theme-color" content="#0A1628">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="style/main.css">
+</head>
+<body data-page="home">
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<header class="topbar" data-navbar>
+  <div class="container nav-row">
+    <a class="brand" href="index.html" aria-label="Accueil SpinApp">
+      <img class="brand-logo" src="assets/logo.png" alt="Logo Spirale Agence">
+      <span class="brand-copy"><span class="brand-name">Spirale Agence</span><span class="brand-sub">SpinApp Distribution</span></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" data-nav-toggle><span></span></button>
+    <nav class="nav-links" aria-label="Navigation principale">
+      <a class="nav-link" href="index.html" data-nav="home">Accueil</a>
+      <a class="nav-link" href="all-apps.html" data-nav="catalog">Applications</a>
+      <a class="nav-link" href="#contact">Contact</a>
+      <a class="btn btn-ghost btn-small" href="admin.html">Portail administrateur</a>
+    </nav>
+  </div>
+</header>
+<main id="contenu">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">Plateforme officielle Spirale Agence</p>
+        <h1>La maison des applications congolaises, prête à <span class="gradient-text">propulser vos usages.</span></h1>
+        <p class="lead">Découvrez, consultez et téléchargez les APK conçus par Spirale Agence depuis un espace autonome, rapide et sécurisé. Une vitrine professionnelle pensée pour le terrain, le mobile et la croissance africaine.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="all-apps.html">Explorer les applications</a>
+          <a class="btn btn-secondary" href="#vision">Voir la promesse</a>
+        </div>
+        <div class="hero-proof" aria-label="Avantages clés">
+          <span class="proof-pill">Téléchargement APK direct</span>
+          <span class="proof-pill">100% autonome</span>
+          <span class="proof-pill">Mobile-first</span>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-card">
+          <div class="phone-panel">
+            <div class="phone-top">
+              <div class="phone-brand"><img class="phone-logo" src="assets/logo.png" alt=""><span>SpinApp</span></div>
+              <span class="status-dot"></span>
+            </div>
+            <div class="orbit-wrap">
+              <span class="orbit-ring"></span>
+              <div class="orbit-core"><img src="assets/logo.png" alt=""></div>
+            </div>
+            <div class="phone-metrics">
+              <div class="mini-metric"><strong>APK</strong><span>direct</span></div>
+              <div class="mini-metric"><strong>Git</strong><span>release</span></div>
+              <div class="mini-metric"><strong>Pro</strong><span>vitrine</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="float-card"><strong>Distribution maîtrisée</strong><span>Spirale garde le contrôle total de ses publications.</span></div>
+        <img class="float-sticker" src="assets/stickers/sticker-distribution.svg" alt="">
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="vision">
+    <div class="container">
+      <div class="section-head">
+        <div><p class="eyebrow">Vision claire</p><h2>Une vitrine digitale sobre, rapide et crédible.</h2></div>
+        <p>SpinApp transforme chaque application Spirale en page de téléchargement structurée, rassurante et orientée conversion.</p>
+      </div>
+      <div class="card-grid">
+        <article class="promise-card"><img src="assets/stickers/sticker-catalog.svg" alt=""><h3>Catalogue centralisé</h3><p>Toutes les solutions Spirale sont regroupées dans un espace cohérent, filtrable et prêt à évoluer.</p></article>
+        <article class="promise-card"><img src="assets/stickers/sticker-security.svg" alt=""><h3>Téléchargement rassurant</h3><p>Des pages propres, des informations techniques visibles et des liens APK maîtrisés par l’agence.</p></article>
+        <article class="promise-card"><img src="assets/stickers/sticker-cloud.svg" alt=""><h3>Déploiement autonome</h3><p>Hébergement GitHub Pages, APK via Releases et publication continue sans plateforme tierce imposée.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="section-head">
+        <div><p class="eyebrow">Dernières publications</p><h2>Les applications à découvrir.</h2></div>
+        <a class="btn btn-secondary" href="all-apps.html">Voir tout le catalogue</a>
+      </div>
+      <div class="app-grid" data-latest-apps><div class="loading-skeleton"></div></div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="section-head"><div><p class="eyebrow">Mesure & croissance</p><h2>Des indicateurs simples pour piloter la distribution.</h2></div></div>
+      <div class="stats-grid" data-home-stats></div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="section-head"><div><p class="eyebrow">Écosystème Spirale</p><h2>Du téléchargement à l’activation client.</h2></div><p>Une logique pensée pour se connecter à WhatsApp, Supabase et aux paiements Mobile Money.</p></div>
+      <div class="flow-grid">
+        <article class="flow-card" data-step="1"><h3>Découverte</h3><p>L’utilisateur consulte la fiche et télécharge l’APK.</p></article>
+        <article class="flow-card" data-step="2"><h3>Installation</h3><p>L’application démarre avec une période d’essai claire.</p></article>
+        <article class="flow-card" data-step="3"><h3>Contact</h3><p>À la fin de l’essai, le client rejoint WhatsApp.</p></article>
+        <article class="flow-card" data-step="4"><h3>Vérification</h3><p>Le bot vérifie le paiement et prépare la clé.</p></article>
+        <article class="flow-card" data-step="5"><h3>Activation</h3><p>La clé débloque l’application après validation.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="section-head"><div><p class="eyebrow">Actualités</p><h2>Ce que SpinApp prépare pour la suite.</h2></div></div>
+      <div class="news-grid">
+        <article class="news-card"><span class="date">Juillet 2026</span><h3>Lancement v1.0</h3><p>Catalogue, pages détaillées, téléchargement APK et portail administrateur sont prêts pour GitHub Pages.</p></article>
+        <article class="news-card"><span class="date">Août 2026</span><h3>Avis & suivi</h3><p>La roadmap prévoit les avis utilisateurs, les compteurs avancés et une recherche enrichie.</p></article>
+        <article class="news-card"><span class="date">Décembre 2026</span><h3>Dashboard complet</h3><p>Connexion Supabase, parrainage et statistiques consolidées pour soutenir la croissance.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight" id="contact">
+    <div class="container contact-band">
+      <article class="contact-card dark"><p class="eyebrow">Contact direct</p><h2>Besoin d’une application qui travaille vraiment pour votre activité ?</h2><p>Spirale Agence conçoit des solutions logicielles utiles, accessibles et prêtes pour le terrain.</p></article>
+      <article class="contact-card"><h2>Parlons de votre prochain outil.</h2><p class="lead">Un message suffit pour démarrer. L’équipe répond rapidement via WhatsApp ou email.</p><div class="contact-list"><a class="contact-link" href="https://wa.me/24383009563" target="_blank" rel="noopener">WhatsApp : +24383009563</a><a class="contact-link" href="mailto:info.elysafly@gmail.com">Email : info.elysafly@gmail.com</a><a class="contact-link" href="#" data-copy="+24383009563">Copier le numéro WhatsApp</a></div></article>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid"><div class="footer-brand"><img src="assets/logo.png" alt="Logo Spirale Agence"><div><strong>SpinApp par Spirale Agence</strong><span>La vitrine officielle des applications de l’agence.</span></div></div><div class="footer-links"><a href="all-apps.html">Applications</a><a href="admin.html">Accès administrateur</a><a href="mailto:info.elysafly@gmail.com">Email</a></div></div>
+    <div class="footer-bottom"><span>© <span data-year>2026</span> Spirale Agence - Tous droits réservés.</span><span>Distribution autonome, sobre et sécurisée.</span></div>
+  </div>
+</footer>
+<script src="scripts/apps.js" defer></script>
+<script src="scripts/main.js" defer></script>
+</body>
+</html>
