@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="220" viewBox="0 0 220 220" role="img" aria-label="WhatsApp Spirale Agence">
+  <defs>
+    <linearGradient id="g" x1="28" x2="194" y1="20" y2="198" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#34D399"/>
+      <stop offset=".58" stop-color="#22C55E"/>
+      <stop offset="1" stop-color="#128C7E"/>
+    </linearGradient>
+    <filter id="s" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#041021" flood-opacity=".24"/>
+    </filter>
+  </defs>
+  <circle cx="110" cy="110" r="86" fill="url(#g)" filter="url(#s)"/>
+  <circle cx="110" cy="110" r="68" fill="#fff" opacity=".18"/>
+  <path d="M68 156l8-31a52 52 0 1 1 19 20l-27 11Z" fill="#fff"/>
+  <path d="M90 86c3-7 5-8 9-8h4c2 0 4 1 5 4l8 18c1 3 0 5-2 7l-5 5c6 10 14 18 27 23l5-6c2-2 4-3 7-2l17 8c4 2 5 4 4 8-1 8-8 16-18 17-17 2-42-11-58-30-14-17-21-37-17-50 2-6 8-12 14-14Z" fill="#128C7E"/>
+  <path d="M57 64c18-24 46-34 76-28" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".48"/>
+</svg>

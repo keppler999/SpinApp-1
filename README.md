@@ -77,7 +77,7 @@ Le workflow inclus publie automatiquement le site avec `peaceiris/actions-gh-pag
 
 ## Contact Spirale Agence
 
-- WhatsApp : +24383009563
-- Email : info.elysafly@gmail.com
+- WhatsApp : +243 808 097 202
+- Adresse : Kinshasa, RDCongo
 
 © 2026 Spirale Agence - Tous droits réservés.
