@@ -1,0 +1,15 @@
+{
+  "name": "spinapp-publisher-worker",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "secret:github": "wrangler secret put GITHUB_TOKEN",
+    "secret:publish": "wrangler secret put PUBLISH_SECRET"
+  },
+  "devDependencies": {
+    "wrangler": "^3.80.0"
+  }
+}

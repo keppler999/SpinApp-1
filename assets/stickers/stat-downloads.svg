@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180" role="img" aria-label="Téléchargements">
+  <defs><linearGradient id="bg" x1="20" x2="160" y1="10" y2="170" gradientUnits="userSpaceOnUse"><stop stop-color="#FFFFFF"/><stop offset="1" stop-color="#EAF7EF"/></linearGradient><linearGradient id="green" x1="44" x2="136" y1="35" y2="148" gradientUnits="userSpaceOnUse"><stop stop-color="#52E58B"/><stop offset="1" stop-color="#2E7D32"/></linearGradient><filter id="s"><feDropShadow dx="0" dy="18" stdDeviation="14" flood-color="#0A1628" flood-opacity=".16"/></filter></defs>
+  <rect x="18" y="18" width="144" height="144" rx="42" fill="url(#bg)" filter="url(#s)"/>
+  <circle cx="90" cy="78" r="42" fill="url(#green)"/>
+  <path d="M90 49v46m0 0 17-17M90 95 73 78" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="52" y="119" width="76" height="17" rx="8.5" fill="#0A1628" opacity=".9"/>
+  <circle cx="65" cy="127.5" r="4" fill="#64B5F6"/><circle cx="81" cy="127.5" r="4" fill="#fff" opacity=".8"/>
+</svg>

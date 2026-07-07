@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nos applications - SpinApp Distribution</title>
+  <meta name="description" content="Catalogue des applications Spirale Agence disponibles en téléchargement APK direct.">
+  <meta name="theme-color" content="#0A1628">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="style/main.css">
+</head>
+<body data-page="catalog">
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<header class="topbar refined-topbar" data-navbar>
+  <div class="container nav-row">
+    <a class="brand" href="index.html"><img class="brand-logo" src="assets/logo.png" alt="Logo SpinApp"><span class="brand-copy"><span class="brand-name">SpinApp</span><span class="brand-sub">Distribution officielle</span></span></a>
+    <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" data-nav-toggle><span></span></button>
+    <nav class="nav-links" aria-label="Navigation principale"><a class="nav-link" href="index.html#distribution">Plateforme</a><a class="nav-link" href="all-apps.html" data-nav="catalog">Applications</a><a class="nav-link" href="index.html#indicateurs">Indicateurs</a><a class="nav-link" href="index.html#contact">Contact</a></nav>
+  </div>
+</header>
+<main id="contenu">
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Nos applications</p>
+      <h1 class="page-title">Le catalogue Spirale, propre et prêt à explorer.</h1>
+      <p class="lead">Filtrez, ouvrez une fiche et trouvez rapidement la solution qui correspond à votre besoin.</p>
+    </div>
+  </section>
+  <section class="section-tight">
+    <div class="container">
+      <div class="catalog-toolbar" role="search">
+        <label class="search-field"><span class="search-icon" aria-hidden="true">⌕</span><span class="sr-only">Rechercher</span><input type="search" placeholder="Rechercher une application, une fonctionnalité…" data-app-search></label>
+        <label><span class="sr-only">Catégorie</span><select data-app-category></select></label>
+      </div>
+      <div class="filter-pills" data-category-pills aria-label="Filtres de catégories"></div>
+      <p class="catalog-count" data-catalog-count>Chargement du catalogue…</p>
+      <div class="app-grid" data-apps-catalog><div class="loading-skeleton"></div></div>
+      <div class="pagination" data-pagination></div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer clean-footer">
+  <div class="container footer-clean-grid footer-pro-grid">
+    <a class="whatsapp-sticker" href="https://wa.me/243808097202" target="_blank" rel="noopener" aria-label="Contacter Spirale Agence sur WhatsApp"><img src="assets/stickers/whatsapp-sticker.svg" alt="WhatsApp"><span><strong>WhatsApp</strong><small>+243 808 097 202</small></span></a>
+    <div class="footer-agency"><strong>Spirale Agence</strong><span>Des solutions digitales propres, utiles et adaptées au terrain.</span></div>
+    <div class="footer-address"><strong>Adresse</strong><span>Congo, Kinshasa</span></div>
+    <p class="footer-copyright"><a href="admin.html" aria-label="© 2026 Spirale Agence">© 2026</a> Spirale Agence</p>
+  </div>
+</footer>
+<script src="scripts/apps.js" defer></script>
+<script src="scripts/main.js" defer></script>
+</body>
+</html>
