@@ -78,6 +78,6 @@ Le workflow inclus publie automatiquement le site avec `peaceiris/actions-gh-pag
 ## Contact Spirale Agence
 
 - WhatsApp : +243 808 097 202
-- Adresse : Kinshasa, RDCongo
+- Adresse : Congo, Kinshasa
 
 © 2026 Spirale Agence - Tous droits réservés.
